@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: kodakouami
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+    healthCheckPath: /api/company
+    routes:
+      - type: http
+        source: /
+        destination: /
