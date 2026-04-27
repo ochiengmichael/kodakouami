@@ -1,0 +1,12 @@
+node_modules
+.git
+.gitignore
+.env.example
+*.log
+.DS_Store
+*.md
+frontend
+FAVICON*
+KOUDAK*
+duplicate.css
+.hintrc
