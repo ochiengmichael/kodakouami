@@ -1,0 +1,22 @@
+{
+  "name": "Koudak Ouami",
+  "short_name": "Koudak",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0B0B0B",
+  "theme_color": "#0B0B0B",
+  "icons": [
+    {
+      "src": "KOUDAKfavicon-mark.svg?v=1",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "KOUDAKfavicon-mark.svg?v=1",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
