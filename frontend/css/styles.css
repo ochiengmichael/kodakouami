@@ -36,7 +36,7 @@ a {
 
 img {
   max-width: 100%;
-  display: block;
+  display: bloc;
 }
 
 button, input, textarea, select {
@@ -92,9 +92,11 @@ button, input, textarea, select {
 
 .brand-mark {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
 }
 
 .main-nav {
@@ -318,6 +320,20 @@ button, input, textarea, select {
 .hero-panel {
   display: flex;
   justify-content: center;
+}
+
+.hero-brand-mark {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  padding: 5px;
+  border: 1px solid rgba(242,86,35,0.45);
+  border-radius: 50%;
+  background: var(--white);
 }
 
 .card-surface {
@@ -690,15 +706,39 @@ button, input, textarea, select {
 }
 
 .visual-one {
-  background: linear-gradient(135deg, #231F20, #323232 40%, #F25623 140%);
+  background-image: linear-gradient(135deg, rgba(21,21,21,0.76), rgba(242,86,35,0.18)), url("https://www.itweb.co.za/static/pictures/2020/07/Tunga-2020.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
-.visual-two,
-.visual-three,
-.visual-four,
-.visual-five,
+.visual-two {
+  background-image: linear-gradient(135deg, rgba(21,21,21,0.62), rgba(242,86,35,0.16)), url("https://images.unsplash.com/photo-1528901166007-3784c7dd3653?auto=format&fit=crop&w=1200&q=85");
+  background-position: center;
+  background-size: cover;
+}
+
+.visual-three {
+  background-image: linear-gradient(135deg, rgba(21,21,21,0.68), rgba(242,86,35,0.18)), url("https://businesspost.ng/wp-content/uploads/2022/02/African-developers.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.visual-four {
+  background-image: linear-gradient(135deg, rgba(21,21,21,0.62), rgba(242,86,35,0.22)), url("https://res.cloudinary.com/nhubnacademy/image/upload/v1678914733/nhubNigeria/backk_nah9dj.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.visual-five {
+  background-image: linear-gradient(135deg, rgba(21,21,21,0.68), rgba(242,86,35,0.16)), url("https://radarafrica.com/wp-content/uploads/2023/08/African-Tech-Startups-jpg.webp");
+  background-position: center;
+  background-size: cover;
+}
+
 .visual-six {
-  background: linear-gradient(135deg, rgba(22,22,22,0.94), rgba(242,86,35,0.32));
+  background-image: linear-gradient(135deg, rgba(21,21,21,0.7), rgba(242,86,35,0.2)), url("https://www.aieverythingkenya.com/img/60_.jpeg");
+  background-position: center;
+  background-size: cover;
 }
 
 .floating-window {
@@ -836,6 +876,46 @@ button, input, textarea, select {
 .page-hero-dark {
   background: var(--charcoal);
   color: var(--off-white);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.page-hero-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-position: center;
+  background-size: cover;
+}
+
+.page-hero-dark .container {
+  position: relative;
+}
+
+.hero-about::before {
+  background-image: linear-gradient(90deg, rgba(21,21,21,0.96) 18%, rgba(21,21,21,0.64)), url("https://www.itweb.co.za/static/pictures/2020/07/Tunga-2020.jpg");
+}
+
+.hero-solutions::before {
+  background-image: linear-gradient(90deg, rgba(21,21,21,0.96) 18%, rgba(21,21,21,0.62)), url("https://businesspost.ng/wp-content/uploads/2022/02/African-developers.jpg");
+}
+
+.hero-work::before {
+  background-image: linear-gradient(90deg, rgba(21,21,21,0.96) 18%, rgba(21,21,21,0.65)), url("https://radarafrica.com/wp-content/uploads/2023/08/African-Tech-Startups-jpg.webp");
+}
+
+.hero-insights::before {
+  background-image: linear-gradient(90deg, rgba(21,21,21,0.96) 18%, rgba(21,21,21,0.62)), url("https://res.cloudinary.com/nhubnacademy/image/upload/v1678914733/nhubNigeria/backk_nah9dj.jpg");
+}
+
+.hero-case-study::before {
+  background-image: linear-gradient(90deg, rgba(21,21,21,0.96) 18%, rgba(21,21,21,0.65)), url("https://www.aieverythingkenya.com/img/60_.jpeg");
+}
+
+.hero-contact::before {
+  background-image: linear-gradient(90deg, rgba(21,21,21,0.96) 18%, rgba(21,21,21,0.62)), url("https://images.unsplash.com/photo-1528901166007-3784c7dd3653?auto=format&fit=crop&w=1800&q=85");
 }
 
 .page-hero .narrow {
@@ -864,6 +944,63 @@ button, input, textarea, select {
 
 .content-block {
   max-width: 560px;
+}
+
+.about-image {
+  min-height: 300px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--charcoal);
+}
+
+.about-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(21,21,21,0.76));
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  display: block;
+  object-fit: cover;
+}
+
+.about-image figcaption {
+  position: absolute;
+  right: 24px;
+  bottom: 20px;
+  left: 24px;
+  z-index: 1;
+  color: var(--white);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.08rem;
+}
+
+.about-belief {
+  margin-top: 42px;
+  align-items: center;
+}
+
+.brand-statement {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  border: 1px solid rgba(21,21,21,0.08);
+  border-radius: var(--radius-md);
+  background: rgba(242,86,35,0.05);
+}
+
+.brand-statement p {
+  margin: 0;
+  color: var(--charcoal);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.15;
 }
 
 .content-block p,
@@ -978,7 +1115,33 @@ button, input, textarea, select {
 .insight-card {
   background: var(--white);
   border-color: rgba(21,21,21,0.08);
-  padding: 26px 22px;
+  padding: 0 0 26px;
+  overflow: hidden;
+}
+
+.insight-image {
+  height: 190px;
+  background-position: center;
+  background-size: cover;
+}
+
+.insight-image-one { background-image: url("https://www.itweb.co.za/static/pictures/2020/07/Tunga-2020.jpg"); }
+.insight-image-two { background-image: url("https://businesspost.ng/wp-content/uploads/2022/02/African-developers.jpg"); }
+.insight-image-three { background-image: url("https://radarafrica.com/wp-content/uploads/2023/08/African-Tech-Startups-jpg.webp"); }
+.insight-image-four { background-image: url("https://res.cloudinary.com/nhubnacademy/image/upload/v1678914733/nhubNigeria/backk_nah9dj.jpg"); }
+.insight-image-five { background-image: url("https://www.aieverythingkenya.com/img/60_.jpeg"); }
+.insight-image-six { background-image: url("https://images.unsplash.com/photo-1528901166007-3784c7dd3653?auto=format&fit=crop&w=1200&q=85"); }
+
+.insight-card .insight-meta,
+.insight-card h3,
+.insight-card > p,
+.insight-card .insight-footer {
+  margin-left: 22px;
+  margin-right: 22px;
+}
+
+.insight-card .insight-meta {
+  margin-top: 22px;
 }
 
 .insight-meta {
@@ -1157,18 +1320,21 @@ select:focus {
 }
 
 .footer-logo-wrap {
-  width: 86px;
-  height: 86px;
+  width: 72px;
+  height: 72px;
   display: grid;
   place-items: center;
+  padding: 0;
 }
 
 .footer-mark,
 .footer-logo-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
 }
 
 .footer-ko {
@@ -1425,6 +1591,7 @@ select:focus {
   }
 
   .brand-mark {
+    width: 40px;
     height: 40px;
   }
 
@@ -1525,10 +1692,44 @@ select:focus {
 }
 
 .footer-brand .footer-mark {
-  width: 56px;
-  height: 56px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  border-radius: 12px;
+}
+
+.philosophy-visual {
+  position: relative;
+  min-height: 280px;
+  margin: 38px 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+}
+
+.philosophy-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(21,21,21,0.82), rgba(21,21,21,0.18));
+}
+
+.philosophy-visual img {
+  width: 100%;
+  height: 280px;
+  display: block;
+  object-fit: cover;
+}
+
+.philosophy-visual figcaption {
+  position: absolute;
+  z-index: 1;
+  bottom: 28px;
+  left: 28px;
+  max-width: 440px;
+  color: var(--white);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.15rem, 2vw, 1.75rem);
+  line-height: 1.15;
 }
 
 .footer-bottom {
